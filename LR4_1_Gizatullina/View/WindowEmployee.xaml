@@ -1,0 +1,40 @@
+﻿<Window x:Class="LR4_1_Gizatullina.View.WindowEmployee"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        Title="Сотрудники" Height="450" Width="750">
+    <DockPanel Margin="10">
+        <StackPanel DockPanel.Dock="Bottom"
+                    Orientation="Horizontal"
+                    HorizontalAlignment="Right"
+                    Margin="0,10,0,0">
+            <Button Content="Добавить" Width="100" Margin="5"
+                    Click="Add_Click"/>
+            <Button Content="Редактировать" Width="120" Margin="5"
+                    Click="Edit_Click"/>
+            <Button Content="Удалить" Width="100" Margin="5"
+                    Click="Delete_Click"/>
+        </StackPanel>
+
+        <ListView x:Name="lvEmployee">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="Код"
+                                    DisplayMemberBinding="{Binding Id}"
+                                    Width="50"/>
+                    <GridViewColumn Header="Фамилия"
+                                    DisplayMemberBinding="{Binding LastName}"
+                                    Width="120"/>
+                    <GridViewColumn Header="Имя"
+                                    DisplayMemberBinding="{Binding FirstName}"
+                                    Width="100"/>
+                    <GridViewColumn Header="Должность"
+                                    DisplayMemberBinding="{Binding Role}"
+                                    Width="130"/>
+                    <GridViewColumn Header="Дата рождения"
+                                    DisplayMemberBinding="{Binding Birthday, StringFormat=dd.MM.yyyy}"
+                                    Width="120"/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+    </DockPanel>
+</Window>
